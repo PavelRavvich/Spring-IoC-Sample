@@ -2,14 +2,13 @@ package ru.pravvich.base;
 
 import org.junit.Test;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
-import org.springframework.test.context.ContextConfiguration;
 import ru.pravvich.UserManager;
 import ru.pravvich.model.Item;
 
 import static org.hamcrest.core.Is.is;
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertNotNull;
+import static org.junit.Assert.assertThat;
 
-@ContextConfiguration("/test-config.xml")
 public class UserManagerTest {
 
     private final ClassPathXmlApplicationContext context =

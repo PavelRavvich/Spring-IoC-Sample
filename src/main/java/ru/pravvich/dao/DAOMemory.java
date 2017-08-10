@@ -1,5 +1,6 @@
 package ru.pravvich.dao;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 import ru.pravvich.model.Item;
 
@@ -23,6 +24,7 @@ public class DAOMemory implements DAO {
     /**
      * Default constructor.
      */
+    @Autowired
     public DAOMemory() {
         memory = new ArrayList<>(100);
     }

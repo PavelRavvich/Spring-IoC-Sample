@@ -8,13 +8,9 @@
                             http://www.springframework.org/schema/context/spring-context.xsd">
 
     <!--Manually create dependencies-->
-    <!--<bean id="memory" class="ru.pravvich.dao.Memory"/>-->
-    <!--<bean id="storage" class="ru.pravvich.base.StorageImpl">-->
-    <!--<constructor-arg name="memory" ref="memory"/>-->
-    <!--</bean>-->
-
-    <!--Scan all base package-->
-    <bean id="daoJdbc" class="ru.pravvich.dao.DAOMemory" />
-    <context:component-scan base-package="ru.pravvich" />
+    <bean id="memory" class="ru.pravvich.dao.DAOMemory"/>
+    <bean id="storage" class="ru.pravvich.UserManager">
+        <constructor-arg name="dao" ref="memory"/>
+    </bean>
 
 </beans>
