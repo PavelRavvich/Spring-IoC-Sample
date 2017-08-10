@@ -4,16 +4,28 @@ package ru.pravvich.model;
  * Author : Pavel Ravvich.
  * Created : 10.08.17.
  * <p>
- * Item
+ * Item sample of storing data.
  */
 public class Item {
+    /**
+     * Primary key.
+     */
     private int id;
+    /**
+     * Some desc.
+     */
     private String description;
 
+    /**
+     * Default constructor.
+     */
     public Item() {
     }
 
-    public Item(int id, String description) {
+    /**
+     * Constructor for test.
+     */
+    public Item(final int id, final String description) {
         this.id = id;
         this.description = description;
     }

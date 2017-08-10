@@ -10,25 +10,42 @@ import java.util.List;
  * Author : Pavel Ravvich.
  * Created : 10.08.17.
  * <p>
- * Memory the class depends on the StorageImpl.
+ * Memory implementation for heap repo.
  */
 @Component
 public class DAOMemory implements DAO {
 
+    /**
+     * Data container.
+     */
     private final List<Item> memory;
 
+    /**
+     * Default constructor.
+     */
     public DAOMemory() {
         memory = new ArrayList<>(100);
     }
 
+    /**
+     * Addition Item obj to heap.
+     *
+     * @param item for add.
+     */
     @Override
-    public void add(Item item) {
+    public void add(final Item item) {
         item.notifyOfAdd();
         memory.add(item);
     }
 
+    /**
+     * Get Item from memory.
+     *
+     * @param id of Item.
+     * @return Item which matching id.
+     */
     @Override
-    public Item getItem(int id) {
+    public Item getItem(final int id) {
 
         Item result = new Item();
 

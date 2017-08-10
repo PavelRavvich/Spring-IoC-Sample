@@ -23,6 +23,11 @@ public class DAOJdbc implements DAO {
      */
     private Connection connection;
 
+    /**
+     * Default constructor.
+     *
+     * @param properties of database.
+     */
     @Autowired
     public DAOJdbc(final PropertiesLoader properties) {
 
@@ -39,6 +44,11 @@ public class DAOJdbc implements DAO {
 
     }
 
+    /**
+     * Create connection to database.
+     *
+     * @throws SQLException fail of connected to database.
+     */
     private void createConnection() throws SQLException {
 
         connection = DriverManager.getConnection(
@@ -48,7 +58,11 @@ public class DAOJdbc implements DAO {
         );
     }
 
-
+    /**
+     * Addition Item to 'items' table.
+     *
+     * @param item for addition.
+     */
     @Override
     public void add(final Item item) {
 
@@ -67,6 +81,12 @@ public class DAOJdbc implements DAO {
         }
     }
 
+    /**
+     * Get Item from 'items' table.
+     *
+     * @param id of Item.
+     * @return Item which matching id.
+     */
     @Override
     public Item getItem(int id) {
 
